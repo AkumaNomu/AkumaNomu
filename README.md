@@ -124,7 +124,3 @@ MemReRust
 
 </div>
 
-> there is probably an easter egg somewhere.
-> statistically, it is also probably useless.
-
-<!-- you found it. reward: ┌──────────────────────┐ │ +1 meaningless point │ └──────────────────────┘ -->
