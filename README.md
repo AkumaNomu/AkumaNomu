@@ -1,7 +1,6 @@
 <div align="center">
 
-Abdelmalek Khelifi
-
+Nomu
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=17&duration=2600&pause=700&color=888888&center=true&vCenter=true&width=620&lines=software+%2F+ai+%2F+systems+%2F+open+source;building+small+weird+things+that+probably+didn't+need+to+exist;currently+thinking+about+agents%2C+trust%2C+and+local+AI" alt="typing animation" />
 
 <br>
@@ -14,7 +13,7 @@ Abdelmalek Khelifi
 
 $ whoami
 
-abdelmalek
+Nomu
 ├─ ai student
 ├─ software developer
 ├─ olympiad coach
