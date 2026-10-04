@@ -1,125 +1,135 @@
 <div align="center">
 
-Nomu
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=17&duration=2600&pause=700&color=888888&center=true&vCenter=true&width=620&lines=software+%2F+ai+%2F+systems+%2F+open+source;building+small+weird+things+that+probably+didn't+need+to+exist;currently+thinking+about+agents%2C+trust%2C+and+local+AI" alt="typing animation" />
+# nomu
 
-<br>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&duration=3000&pause=900&color=888888&center=true&vCenter=true&width=560&lines=agents+%C2%B7+trust+%C2%B7+local+ai;small+weird+software+that+probably+didn't+need+to+exist;currently%3A+teaching+agents+who+not+to+believe" alt="typing animation" />
 
-<a href="https://create.withdots.studio"> <img src="https://img.shields.io/badge/portfolio-111111?style=flat-square&logo=safari&logoColor=white"> </a> <a href="https://linkedin.com/in/akumanomu"> <img src="https://img.shields.io/badge/linkedin-111111?style=flat-square&logo=linkedin&logoColor=white"> </a> <a href="mailto:akumanomu@proton.me"> <img src="https://img.shields.io/badge/email-111111?style=flat-square&logo=protonmail&logoColor=white"> </a>
+<a href="https://create.withdots.studio"><img src="https://img.shields.io/badge/portfolio-111111?style=flat-square&logo=safari&logoColor=white" alt="portfolio"></a>
+<a href="https://linkedin.com/in/akumanomu"><img src="https://img.shields.io/badge/linkedin-111111?style=flat-square&logo=linkedin&logoColor=white" alt="linkedin"></a>
+<a href="mailto:akumanomu@proton.me"><img src="https://img.shields.io/badge/email-111111?style=flat-square&logo=protonmail&logoColor=white" alt="email"></a>
 
 </div>
 
 <br>
 
+```console
 $ whoami
-
-Nomu
-├─ ai student
+nomu
+├─ ai student ............ pavia · unimi · milano-bicocca
 ├─ software developer
 ├─ olympiad coach
 ├─ occasional rust victim
 └─ based in algiers
+```
 
-I like building software where AI, systems, interfaces, and weird automation ideas overlap.
-
-Currently studying Artificial Intelligence across the University of Pavia, University of Milan, and Milano-Bicocca.
-
-right now
-01  researching     reputation-aware LLM agents
-02  designing       MITES — tiny event-driven local agents
-03  building        software / tools / web things
-04  learning        how far I can abuse Linux before regretting it
-
-<details> <summary><b>what I mean by reputation-aware agents</b></summary>
+I build where **AI, systems, and interfaces** overlap — mostly small, local, slightly strange tools that do one thing and can explain why they did it.
 
 <br>
 
-Instead of an agent treating every message as equally trustworthy:
-
-        interaction
-             │
-             ▼
-     ┌───────────────┐
-     │ observation   │
-     └───────┬───────┘
-             │
-             ▼
-      reputation Δ
-             │
-             ▼
-   future decisions change
-
-I’m interested in how agents can build persistent models of:
-
-trust
-deception
-reliability
-cooperation
-contradiction
-social history
-
-Particularly in repeated multi-agent environments where those things actually matter.
-
-</details>
-
-<details> <summary><b>MITES</b></summary>
+```console
+$ cat ~/now
+01  researching   reputation-aware LLM agents
+02  designing     MITES — a swarm of tiny event-driven local agents
+03  building      software, tools, web things
+04  learning      how far Linux bends before I regret it
+```
 
 <br>
 
-Micro Intelligent Task Execution Swarm
+## research
 
-An experiment in replacing:
+<details>
+<summary><b>reputation-aware agents</b> — agents that remember who lied to them</summary>
 
-one giant assistant doing everything
+<br>
 
-with:
+Most agents treat every message as equally trustworthy. In repeated multi-agent settings, that's a bug.
 
-                     events
-                       │
-         ┌─────────────┼─────────────┐
-         ▼             ▼             ▼
-      rules         tiny model    tiny model
-         │             │             │
-         └─────────────┼─────────────┘
-                       ▼
-                  shared state
-                       │
-                  escalation?
-                   /        \
-                 no          yes
-                 │            │
-              execute     bigger model
+```
+   interaction
+        │
+        ▼
+ ┌──────────────┐
+ │ observation  │
+ └──────┬───────┘
+        ▼
+  reputation Δ  ──►  persistent model of the other agent
+        │
+        ▼
+ future decisions change
+```
 
-The goal is local automation that is:
+The model tracks **trust · deception · reliability · cooperation · contradiction · social history**.
 
-cheap · event-driven · auditable · permission-aware · modular
+Questions I'm chasing:
+
+- can an agent learn whom to trust from interaction history rather than a system prompt?
+- what does deception look like as a signal over time, not in a single turn?
+- how should reputation decay, transfer between contexts, or be contested?
 
 </details>
 
-things I've touched
+<details>
+<summary><b>MITES</b> — Micro Intelligent Task Execution Swarm</summary>
 
-Python · TypeScript · C++ · Rust · JavaScript
+<br>
 
-React · Next.js · PostgreSQL · Supabase
+An experiment in replacing *one giant assistant doing everything* with many small ones that only wake up when something happens.
 
-scikit-learn · librosa · Whisper · ONNX
+```
+                  events
+                    │
+      ┌─────────────┼─────────────┐
+      ▼             ▼             ▼
+    rules       tiny model    tiny model
+      │             │             │
+      └─────────────┼─────────────┘
+                    ▼
+               shared state
+                    │
+               escalate?
+               /       \
+             no         yes
+             │           │
+          execute    bigger model
+```
 
-Linux · FFmpeg · Tesseract · WebExtensions
+Design goals:
 
-some code
+| | |
+|---|---|
+| **cheap** | rules first, tiny models second, big models only on escalation |
+| **event-driven** | nothing runs unless something happened |
+| **auditable** | every action traces back to an event and a decision |
+| **permission-aware** | each agent gets only the access its job needs |
+| **modular** | swap any agent without touching the rest |
 
-<sub> because apparently GitHub profiles are legally required to contain links to GitHub repositories </sub>
+</details>
 
-Parker ·
-Mai ·
-Tina ·
-MemReRust
+<br>
+
+## things I've built
+
+| project | what it is |
+|---|---|
+| [**Parker**](https://github.com/AkumaNomu/Parker) | <!-- one line: what it does + main tech --> |
+| [**Mai**](https://github.com/AkumaNomu/Mai) | <!-- one line --> |
+| [**Tina**](https://github.com/AkumaNomu/Tina) | <!-- one line --> |
+| [**MemReRust**](https://github.com/AkumaNomu/MemReRust) | <!-- one line --> |
+
+<br>
+
+## toolbox
+
+```yaml
+languages:  python · typescript · rust · c++ · javascript
+web:        react · next.js · postgresql · supabase
+ml/audio:   scikit-learn · librosa · whisper · onnx
+systems:    linux · ffmpeg · tesseract · webextensions
+```
+
+<br>
 
 <div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=AkumaNomu&show_icons=true&hide_border=true&hide_title=true&bg_color=00000000&text_color=777777&icon_color=777777" height="135" />
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AkumaNomu&layout=compact&hide_border=true&bg_color=00000000&text_color=777777&title_color=777777" height="135" />
-
+<sub>if you're working on agents, trust, or local-first AI — say hi.</sub>
 </div>
-
